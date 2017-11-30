@@ -1,0 +1,19 @@
+<h1><%= topicHead %></h1>
+<table class="table table-bordered table-hover table-striped">
+	<thead>
+		<tr>
+			<th>URL</th>
+			<th>Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for (var i = 0; i < results.length; i++) { %>
+			<tr>
+				<td><%= results[i].show.url %></td>
+				<td><%= results[i].show.name %></td>
+			</tr>
+			<% } %> 		
+					
+	</tbody>
+</table>
+

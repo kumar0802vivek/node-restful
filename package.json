@@ -1,0 +1,37 @@
+{
+  "name": "node-restful",
+  "version": "2.0.0",
+  "description": "this is sample node application using restful",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodejs server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "vivek kumar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "express-validator": "^3.2.1",
+    "mongodb": "^2.2.30",
+    "express-ejs-layouts": "~2.3.1",
+    "node-geocoder": "~3.20.0",
+    "mongoose": "~4.11.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumar0802vivek/Node.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kumar0802vivek/Node.js/issues"
+  },
+  "homepage": "https://github.com/kumar0802vivek/Node.js#readme",
+  "keywords": [
+    "node-restful"
+  ]
+}

@@ -12,6 +12,7 @@ body{
 #site-main{
 	padding-bottom: 50px;
 	padding-top:50px;
+	min-height: 800px;
 }
 
 #site-footer{

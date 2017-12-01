@@ -10,11 +10,11 @@ module.exports = {
 		request.get({ url: "http://api.tvmaze.com/search/shows?q=" + req.query.q }, function (error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var JSONObject = JSON.parse(body);
+				//console.log(JSONObject[0]); return;
 				res.render('pages/search-results', { results: JSONObject, topicHead: 'Search' });
 			}else{
 				console.log('Error while getting the results!')
 			}
 		});
-		
 	}
 };

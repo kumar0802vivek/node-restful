@@ -28,3 +28,12 @@ body{
 .pac-container:after{
     content:none !important;
 }
+.episode{
+	padding-bottom: 20px;
+}
+.episode-tbl{
+	width: 75%; margin: 0 auto;
+}
+.search-row{
+	padding-bottom: 20px;
+}

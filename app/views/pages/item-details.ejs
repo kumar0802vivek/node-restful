@@ -1,0 +1,101 @@
+<h1>
+    <%= topicHead %>
+</h1>
+<% if(results) { %>
+    <div class="row" style="padding-bottom: 20px;">
+        <div class="col-sm-1">
+            <a href="javascript:void(0)">Main</a>
+        </div>
+        <div class="col-sm-1">
+            <a href="javascript:void(0)">Episodes</a>
+        </div>
+        <div class="col-sm-1">
+            <a href="javascript:void(0)">Cast</a>
+        </div>
+        <div class="col-sm-1">
+            <a href="javascript:void(0)">Crew</a>
+        </div>
+        <div class="col-sm-1">
+            <a href="javascript:void(0)">Characters</a>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom: 20px;">
+        <div class="col-sm-2">
+            <% if (results.image) { %>
+                <img height="250px" src=" <%= results.image.medium %> ">
+                <% }else{ %>
+                    <img height="250px" src="/img/no-img-portrait-text.png">
+                    <% } %>
+        </div>
+        <div class="col-sm-6">
+            <%= results.summary %><br>
+
+        </div>
+        <div class="col-sm-4">
+            <h2>Show Info</h2>
+            <b>Airs on: </b>
+            <%= results.network.name %> (
+                <%= results.premiered %> - now) <br>
+                    <b>Schedule:</b>
+                    <%= results.schedule.days %> at
+                        <%= results.schedule.time %> (
+                            <%= results.runtime %> min) <br>
+                                <b>Status:</b>
+                                <%= results.status %><br>
+                                    <b>Show Type:</b>
+                                    <%= results.type %> <br>
+                                        <b>Genres:</b>
+                                        <%= results.genres %><br>
+                                            <b>Episodes ordered:</b><br>
+                                            <b>Rating: </b>
+                                            <%= results.rating.average %>
+
+        </div>
+    </div>
+    <div class="row episode">
+        <h2 style="text-align:center;">Previous Episodes</h2>
+        <table class="table" style="width: 75%; margin: 0 auto;">
+            <thead>
+                <tr>
+                    <th>Episode Name</th>
+                    <th>Airdate </th>
+                    <th>Trailer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (results._embedded.episodes) { %>
+                    <% for (var i = 0; i < results._embedded.episodes.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= results._embedded.episodes[i].name %>
+                            </td>
+                            <td>
+                                <%= results._embedded.episodes[i].airdate %>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <% } %>
+            </tbody>
+        </table>
+        <% } %>
+    </div>
+    <h2>Cast</h2>
+    <div class="row">
+        <% if (results._embedded.cast) { %>
+            <% for (var i = 0; i < results._embedded.cast.length; i++) { %>
+                <div class="col-sm-4" style="padding-bottom:10px;">
+                    <div class="col-sm-6">
+                        <% if (results._embedded.cast[i].person.image) { %>
+                            <img height="250px" src=" <%= results._embedded.cast[i].person.image.medium %> ">
+                            <% }else{ %>
+                                <img height="250px" src="/img/no-img-portrait-text.png">
+                                <% } %>
+                    </div>
+                    <div class="col-sm-4" style="margin-left:10px;">
+                        <%= results._embedded.cast[i].person.name %>
+                    </div>
+                </div>
+                <% } %>
+                    <% } %>
+    </div>
+    <% } %>
